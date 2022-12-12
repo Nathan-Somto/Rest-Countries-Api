@@ -16,7 +16,9 @@ useEffect(()=>{
     return(
     <>
         <FilterSection search ={search} setSearchInput={setSearchInput}/>
-        <CountryContainer setName = {setName} data ={response} loading ={loading} error={error}/>
+        {loading && <h1>Loading...</h1>}
+            {error && <h1>No result...</h1> }
+        <CountryContainer setName = {setName} data ={response} />
         </>);
 }
 
