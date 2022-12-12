@@ -6,7 +6,7 @@ import Navbar from './Components/Navbar';
 function App() {
   const[Theme, setTheme] = useState('Dark');
   const[name, setName]= useState('');
-  const url = `https://restcountries.com/v2/name/${name}?fullText=true/`;
+  const url = `https://restcountries.com/v2/name/${name}?fullText=true`;
   return(  
     <>
       <Navbar Theme={Theme} setTheme={setTheme}/>

@@ -27,8 +27,8 @@ img{
 
 }
 [data-theme='Light']{
---bg-color:hsl(0,0%,98%);
---color:hsl(0,0%,100%);
+--bg-color:hsl(0,0%,92%);
+--color:hsl(0,0% , 100%);
 }
 .mainNav{
 background-color: var(--color);
@@ -121,11 +121,12 @@ a,a:visited{
   background-color:var(--color);
   margin:0 auto;
   width:100%;
+  border-radius:0.45rem;
+  overflow: hidden;
 }
 .card img{ 
   width:100%;
   height:170px;
-  overflow:hidden;
   object-fit:cover;
 
 }
@@ -135,4 +136,57 @@ a,a:visited{
 }
 .info-details{
   padding:0.75rem 1.2rem 1.2rem;
+}
+.DetailsContainer{
+  width:100%;
+
+  margin: 3.95rem  auto 0 auto;
+}
+.left img{
+  height:70%;
+  margin: 0 auto;
+  width:80%;
+}
+.grid{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  place-items: center;
+  grid-template-areas: 1fr;
+
+}
+.grid-1x2{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  justify-content: flex-end;
+  gap:3.2rem;
+}
+/*.grid-1x2 div:nth-child(1), .grid-1x2 div:nth-child(2){
+  border:2px solid #fff;
+}*/
+.extraInfo span{
+  opacity:0.5;
+  padding-left:0.4rem;
+}
+.right{
+  padding:0.85rem;
+  place-content: center;
+}
+@media(max-width:800px){
+  .grid,.grid-1x2{
+    grid-template-columns: 1fr;
+  }
+}
+.backIcon{
+  padding:0.85rem;
+  background-color:var(--color);
+  box-shadow:0px 0px 20px var(--shadow);
+  border-radius: 0.35rem;
+}
+.border{
+  padding:0.55rem;
+  margin-top:0.55rem;
+  background-color: var(--color);
+}
+.detailsPage{
+  padding:1.5rem;
 }

@@ -10,7 +10,6 @@ useEffect(()=>{
    if(data !== null)
    {   
         let filteredData = data.filter(item => item.name.toLowerCase().includes(search.toLowerCase()) ||  item.region.includes(search));
-        console.log(filteredData); 
         setResponse([...filteredData]);
 }
 },[data,search])

@@ -1,14 +1,24 @@
-function  DetailsContainer({detailsData,loading,error}) 
+import Borders from "../Styles/Borders";
+function  DetailsContainer(
+    {name,
+    flag,
+    nativeName,
+    topLevelDomain,
+    population,
+    currencies,
+    region,
+    languagues,
+    subregion,
+    capital,
+    borders,
+    setCode
+}) 
 
 {
-
-    const{name,flag,nativeName,topLevelDomain,population,currencies,region,languagues,subregion,capital,borders} = detailsData;
-
  return(
     <>
-    {loading && <h1>loading...</h1>}
-    {error && <h1>No result</h1>}
-{Array.isArray(detailsData) && <section>
+    
+ <section className="DetailsContainer grid">
     <div className="left">
         <img src={flag} alt={`${name} flag`} />
     </div>
@@ -19,18 +29,18 @@ function  DetailsContainer({detailsData,loading,error})
                 <p>Native name: <span>{nativeName}</span></p>
                 <p>population: <span>{population}</span> </p>
                 <p>Sub region:  <span>{subregion}</span></p>
-                <p>Currencies: <span>money</span></p>
+                <p>Currencies: <span>{currencies.map(item => `${item.name}`)}</span></p>
                 <p>Capital: <span>{capital}</span> </p>
             </div>
             <div>
-                <p>Top Level Domain: <span>htg</span></p>
+                <p>Top Level Domain: <span>{topLevelDomain[0]}</span></p>
                 <p>region: <span>{region}</span></p>
-                <p>Langauges: <span>language</span></p>
+                <p>Langauges: <span>{languagues.map(language => languagues.indexOf(language) !== languagues.length-1 ?`${language.name}, `: `${language.name}`)}</span></p>
             </div>
         </div>
-        <p>Border Countries: </p>
+        <p>Border Countries: {borders && borders.map(border => <Borders key={border}  border ={border} ></Borders>)} </p>
     </div>
-</section>}
+</section>
     </>
  )   
 }
