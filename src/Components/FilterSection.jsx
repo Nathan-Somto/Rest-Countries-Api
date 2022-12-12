@@ -1,8 +1,6 @@
 import React from 'react';
-function FilterSection({Theme,setData}) {
-    // to find a country use  the name in the filter method
-    // filter based on the region for the drop down
-    // change the items in the country card component
+function FilterSection({setSearchInput,search}) {   
+    
     const filterRegion =[
         {
             id:0,
@@ -30,15 +28,15 @@ function FilterSection({Theme,setData}) {
         }
     ];
     return(
-        <form>
+        <form  onSubmit ={ (e) => e.preventDefault()} className="FilterSection">
             <label htmlFor="searchbar">
-                <input type="text" placeholder='Search for a Country...' id ="searchbar" />
+                <input className="searchBar"  value={search} onChange={(e)=>setSearchInput(e.target.value)} type="text" placeholder='Search for a Country...' id ="searchbar" />
                 </label>
                 <label htmlFor="filter">
-                    <select name="" id="filter">
+                    <select onChange ={(e)=>setSearchInput(e.target.value)} value ="filter" id="filter">
                         {filterRegion.map(({id, region})=>{
-                            return <option key={id}>{region}</option>
-                        })}
+                            return <option key={id}>{region}</option>}
+                        )}
                     </select>
                 </label>
         </form>

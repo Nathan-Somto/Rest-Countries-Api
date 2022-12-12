@@ -5,17 +5,18 @@ import Details from "./Pages/Details";
 import Navbar from './Components/Navbar';
 function App() {
   const[Theme, setTheme] = useState('Dark');
-  const[url, setUrl] = useState('');
+  const[name, setName]= useState('');
+  const url = `https://restcountries.com/v2/name/${name}?fullText=true/`;
   return(  
-    <div>
+    <>
       <Navbar Theme={Theme} setTheme={setTheme}/>
     <BrowserRouter>
     <Routes>
-      <Route path ="/" element={<Home Theme={Theme} url ={url} setUrl={setUrl} ></Home>}/>
-      <Route path ="Details" element={<Details url ={ url} />}/>
+      <Route path ="/" element={<Home Theme={Theme}  setName={setName} ></Home>}/>
+      <Route path ="Details" element={<Details name= {name} url ={ url} setName={setName} />}/>
     </Routes>
     </BrowserRouter>
-    </div>
+    </>
   );
 
 }
