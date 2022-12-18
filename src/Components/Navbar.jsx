@@ -19,7 +19,7 @@ function Navbar ({setTheme, Theme}) {
             <ul>
                 <li>Where in the World ?</li>
                 <li><img src= {Theme === 'Light' ? moon : sun} alt ="toggler" onClick={changeTheme}/> 
-                <span>{`${Theme} Mode`}</span></li>
+                <span>{`${Theme === 'Light'? 'Dark':'Light'} Mode`}</span></li>
             </ul>
         </nav>
     );

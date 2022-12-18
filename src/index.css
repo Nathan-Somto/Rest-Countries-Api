@@ -82,17 +82,32 @@ span{
 .searchBar::placeholder{
   color:var(--text);
   font-size: 13px;
+  text-align:center;
 }
 label:nth-child(1){
-  width:50%
+  width:50%;
+  position:relative;
 }
 .searchBar{
   padding:1.25rem;
  color:var(--text); 
   background-color:var(--color);
   border: 2px solid var(--bg-color);
-  box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.5);
+  text-align:center;
   width:70%;
+  border-radius:0.5rem;
+}
+.searchBar:active{
+  border:2px solid var(--color);
+}
+.searchIcon{
+position:absolute;
+top:1rem;
+left:1rem;
+  height:25px;
+  width:25px;
+  margin-right:1.5rem;
 }
 #filter{
   padding:1.25rem;
@@ -139,30 +154,35 @@ a,a:visited{
 }
 .DetailsContainer{
   width:100%;
-
-  margin: 3.95rem  auto 0 auto;
+overflow-x:hidden;
+  padding:1.5rem;
+}
+.left{
+  min-width:200px;
+  width:100%;
+  height:100%;
 }
 .left img{
-  height:70%;
   margin: 0 auto;
   width:80%;
+  height:auto;
+  min-height:300px;
+
 }
+
 .grid{
   display: grid;
   grid-template-columns: repeat(2,1fr);
+  grid-template-rows: 1fr;
   place-items: center;
-  grid-template-areas: 1fr;
 
 }
 .grid-1x2{
   display:grid;
   grid-template-columns: repeat(2,1fr);
   justify-content: flex-end;
-  gap:3.2rem;
 }
-/*.grid-1x2 div:nth-child(1), .grid-1x2 div:nth-child(2){
-  border:2px solid #fff;
-}*/
+
 .extraInfo span{
   opacity:0.5;
   padding-left:0.4rem;
@@ -175,18 +195,41 @@ a,a:visited{
   .grid,.grid-1x2{
     grid-template-columns: 1fr;
   }
+
 }
 .backIcon{
-  padding:0.85rem;
   background-color:var(--color);
   box-shadow:0px 0px 20px var(--shadow);
   border-radius: 0.35rem;
+  width:80px;
+  height:40px;
+  display:flex;
+  align-items:center;
+}
+.backIcon img{
+
+  fill:rgba(230, 17, 17, 0.5);
+  height:20px;
+  width:20px;
+  margin-right:0.5rem;
 }
 .border{
   padding:0.55rem;
-  margin-top:0.55rem;
+  margin-top:0.8rem;
+  margin-right: 0.4rem;
   background-color: var(--color);
+  cursor:pointer;
+  border-radius:0.25rem;
+
+}
+.border:nth-child(1){
+  margin-left:0.4rem;
 }
 .detailsPage{
   padding:1.5rem;
+}
+.borderContainer{
+  display:flex;
+  align-items: center;
+  flex-wrap:wrap;
 }

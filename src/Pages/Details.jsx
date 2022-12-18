@@ -2,16 +2,16 @@ import React, { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import DetailsContainer from '../Components/DetailsContainer';
 import useAxios from '../Hooks/useAxios';
+import nameAndCodes  from '../Components/countryNamesandCodes';
+import backicon from '../back.svg';
 function Details({url,setName,name}) {
     if(!name){
         setName(JSON.parse(window.localStorage.getItem('URL_State')));
     }
-    const [code,setCode] =useState('');
-    const borderUrl = `https://restcountries.com/v2/alpha/${code}`;
-   const {data, loading, error} = useAxios(code ? borderUrl : url);
-   const[historyStack,setHistoryStack] = useState([]);
+   const {data, loading, error} = useAxios(url);
    const [response, setResponse] = useState([]);
-   console.log(code);
+   const [countryNames, setCountryNames] = useState([]);
+   
     useEffect(() =>{
        if(name){
             window.localStorage.setItem('URL_State',JSON.stringify(name));
@@ -19,31 +19,27 @@ function Details({url,setName,name}) {
       
     if(data.length !== 0 ){
     setResponse([...data]);
+    let countryNames =[];
+    if(data[0].borders)
+    {
+   data[0].borders.forEach(border => {
+    let obj = nameAndCodes.filter(item => item.code === border);
+    countryNames.push(obj[0].name);       
+    });
+    setCountryNames([...countryNames]);
+}
    
 }
 return () =>{
-    console.log('un mopunt');
+    console.log('un mount');
 }
 
-},[data,url,name,code]);
-console.log(loading);
- 
-    function handleBorder()
-    {
-        return;
-        //setName() Set the name hook to the name of the border clicked
-        // add the name of the border to the top of the history stack
+},[data,url,name]);
 
-    }
-    function handleStack()
-    {
-        return;
-        setName(historyStack[historyStack.length-1]); // set the name to the last element in the history stack
-        setHistoryStack([...historyStack.filter(item => item !== historyStack.length - 1)]); // remove the last coutnry in the history
-    }
         return(
             <div className='detailsPage'>
-            <Link className='backIcon' onClick ={handleStack} to={historyStack.length === 0 ?'/':'Details'}>Back Icon</Link>
+            <Link className='backIcon'  to={'/'}>
+               <img src={backicon} alt="back icon" /> Back</Link>
 
             {loading && <h1>loading...</h1>}
             {response && response.map( item => <DetailsContainer
@@ -58,8 +54,8 @@ console.log(loading);
         languagues ={item.languages}
         subregion ={item.subregion}
         capital ={item.capital}
-        borders ={item.borders}  
-        setCode = {setCode}
+        borders ={countryNames}  
+        setName = {setName}
         />)}
         </div>
     )

@@ -1,5 +1,6 @@
 import React from 'react';
-function FilterSection({setSearchInput,search}) {   
+import searchIcon from '../search.svg';
+function FilterSection({setSearchInput,search,option, setSearchOption}) {   
     
     const filterRegion =[
         {
@@ -27,13 +28,23 @@ function FilterSection({setSearchInput,search}) {
             region: 'Europe'
         }
     ];
+    function selectSearch(e){
+        setSearchOption('');
+        setSearchInput(e.target.value);
+    }
+    function selectOption(e){
+        setSearchInput('');
+        setSearchOption(e.target.value);
+    }
     return(
         <form  onSubmit ={ (e) => e.preventDefault()} className="FilterSection">
+
             <label htmlFor="searchbar">
-                <input className="searchBar"  value={search} onChange={(e)=>setSearchInput(e.target.value)} type="text" placeholder='Search for a Country...' id ="searchbar" />
+                     <img className ='searchIcon' src = {searchIcon} alt="search icon" /> 
+                <input className="searchBar"  value={search} onChange={selectSearch} type="text" placeholder='Search for a Country...' id ="searchbar" />
                 </label>
                 <label htmlFor="filter">
-                    <select onChange ={(e)=>setSearchInput(e.target.value)} value ="filter" id="filter">
+                    <select onChange ={selectOption} value ={option} id="filter">
                         {filterRegion.map(({id, region})=>{
                             return <option key={id}>{region}</option>}
                         )}

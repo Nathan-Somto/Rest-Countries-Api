@@ -1,7 +1,8 @@
 import React from  "react";
-function Borders({border}) {
+
+function Borders({border,setName}) {
     return(
-        <span className="border">{border}</span>
+        <div className="border" onClick={e => setName(border)}>{border}</div>
     )
 }
 

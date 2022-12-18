@@ -11,7 +11,7 @@ function  DetailsContainer(
     subregion,
     capital,
     borders,
-    setCode
+    setName
 }) 
 
 {
@@ -38,8 +38,10 @@ function  DetailsContainer(
                 <p>Langauges: <span>{languagues.map(language => languagues.indexOf(language) !== languagues.length-1 ?`${language.name}, `: `${language.name}`)}</span></p>
             </div>
         </div>
-        <p>Border Countries: {borders && borders.map(border => <Borders key={border}  border ={border} ></Borders>)} </p>
-    </div>
+        <div ><span>Borders: </span> <div className='borderContainer'>{borders && 
+        borders.map(border => <Borders key={border}  setName ={setName}  border ={border} ></Borders>)}   </div>
+        </div>
+        </div>
 </section>
     </>
  )   
