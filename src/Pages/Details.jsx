@@ -20,6 +20,8 @@ function Details({url,setName,name}) {
     if(data.length !== 0 ){
     setResponse([...data]);
     let countryNames =[];
+    
+    // checks if borders is undefined
     if(data[0].borders)
     {
    data[0].borders.forEach(border => {
