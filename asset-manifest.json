@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.a2dba314.css",
-    "main.js": "/static/js/main.e9acb839.js",
-    "static/js/787.e93716af.chunk.js": "/static/js/787.e93716af.chunk.js",
-    "static/media/sun.svg": "/static/media/sun.0688a90205f2a7ab5d52134b13ef68da.svg",
-    "static/media/moon.svg": "/static/media/moon.8eaca44b53c75b78da4543c2412046af.svg",
-    "static/media/search.svg": "/static/media/search.571af46526c7b8c9e43a20b4c44fe7be.svg",
-    "index.html": "/index.html",
-    "static/media/back.svg": "/static/media/back.e5c5bcc0af55dac6f8acdeaff8ee496a.svg",
-    "main.a2dba314.css.map": "/static/css/main.a2dba314.css.map",
-    "main.e9acb839.js.map": "/static/js/main.e9acb839.js.map",
-    "787.e93716af.chunk.js.map": "/static/js/787.e93716af.chunk.js.map"
+    "main.css": "/Nathan-Somto/Rest-Countries-Api/static/css/main.a2dba314.css",
+    "main.js": "/Nathan-Somto/Rest-Countries-Api/static/js/main.580c5fbb.js",
+    "static/js/787.e93716af.chunk.js": "/Nathan-Somto/Rest-Countries-Api/static/js/787.e93716af.chunk.js",
+    "static/media/sun.svg": "/Nathan-Somto/Rest-Countries-Api/static/media/sun.0688a90205f2a7ab5d52134b13ef68da.svg",
+    "static/media/moon.svg": "/Nathan-Somto/Rest-Countries-Api/static/media/moon.8eaca44b53c75b78da4543c2412046af.svg",
+    "index.html": "/Nathan-Somto/Rest-Countries-Api/index.html",
+    "static/media/search.svg": "/Nathan-Somto/Rest-Countries-Api/static/media/search.571af46526c7b8c9e43a20b4c44fe7be.svg",
+    "static/media/back.svg": "/Nathan-Somto/Rest-Countries-Api/static/media/back.e5c5bcc0af55dac6f8acdeaff8ee496a.svg",
+    "main.a2dba314.css.map": "/Nathan-Somto/Rest-Countries-Api/static/css/main.a2dba314.css.map",
+    "main.580c5fbb.js.map": "/Nathan-Somto/Rest-Countries-Api/static/js/main.580c5fbb.js.map",
+    "787.e93716af.chunk.js.map": "/Nathan-Somto/Rest-Countries-Api/static/js/787.e93716af.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a2dba314.css",
-    "static/js/main.e9acb839.js"
+    "static/js/main.580c5fbb.js"
   ]
 }
