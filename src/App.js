@@ -9,8 +9,9 @@ function App() {
   const url = `https://restcountries.com/v2/name/${name}?fullText=true`;
   return(  
     <>
-      <Navbar Theme={Theme} setTheme={setTheme}/>
+     
     <BrowserRouter>
+     <Navbar Theme={Theme} setTheme={setTheme}/>
     <Routes>
       <Route path ="/Rest-Countries-Api" element={<Home Theme={Theme}  setName={setName} ></Home>}/>
       <Route path ="/Rest-Countries-Api/Details" element={<Details name= {name} url ={ url} setName={setName} />}/>
