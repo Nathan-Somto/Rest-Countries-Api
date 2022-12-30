@@ -5,7 +5,7 @@ function CountryCard({flag,name,population,region,capital, setName}) {
         setName(name);
     }
     return(
-        <Link to="/Rest-Countries-Api/Details"  >
+        <Link to="/Details"  >
         <div className="card" onClick={(e)=>findInfo({name})}>
             <div className = "countryFlag"><img src={flag} alt ={`${name} flag`} /></div>
             <div className="info-details">
