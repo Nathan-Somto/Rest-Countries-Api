@@ -40,7 +40,7 @@ return () =>{
 
         return(
             <div className='detailsPage'>
-            <Link className='backIcon'  to={'/'}>
+            <Link className='backIcon'  to={'/Rest-Countries-Api'}>
                <img src={backicon} alt="back icon" /> Back</Link>
 
             {loading && <h1>loading...</h1>}

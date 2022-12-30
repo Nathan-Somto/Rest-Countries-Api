@@ -12,8 +12,8 @@ function App() {
       <Navbar Theme={Theme} setTheme={setTheme}/>
     <BrowserRouter>
     <Routes>
-      <Route path ="/" element={<Home Theme={Theme}  setName={setName} ></Home>}/>
-      <Route path ="Details" element={<Details name= {name} url ={ url} setName={setName} />}/>
+      <Route path ="/Rest-Countries-Api" element={<Home Theme={Theme}  setName={setName} ></Home>}/>
+      <Route path ="/Rest-Countries-Api/Details" element={<Details name= {name} url ={ url} setName={setName} />}/>
     </Routes>
     </BrowserRouter>
     </>
