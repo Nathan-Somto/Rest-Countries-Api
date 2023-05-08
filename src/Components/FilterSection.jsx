@@ -1,7 +1,8 @@
-import React from 'react';
-import searchIcon from '../search.svg';
-function FilterSection({setSearchInput,search,option, setSearchOption}) {   
-    
+import React, {useState} from 'react';
+import searchIcon from '../Assets/search.svg';
+function FilterSection({filterData}) {   
+    const [search, setSearchInput] = useState("");
+  const [option, setSearchOption] = useState("");
     const filterRegion =[
         {
             id:0,
@@ -28,12 +29,12 @@ function FilterSection({setSearchInput,search,option, setSearchOption}) {
             region: 'Europe'
         }
     ];
-    function selectSearch(e){
-        setSearchOption('');
+    function handleSearch(e){
+        filterData(e.target.value,'');
         setSearchInput(e.target.value);
     }
-    function selectOption(e){
-        setSearchInput('');
+    function handleOption(e){
+        filterData('',e.target.value);
         setSearchOption(e.target.value);
     }
     return(
@@ -41,10 +42,10 @@ function FilterSection({setSearchInput,search,option, setSearchOption}) {
 
             <label htmlFor="searchbar">
                      <img className ='searchIcon' src = {searchIcon} alt="search icon" /> 
-                <input className="searchBar"  value={search} onChange={selectSearch} type="text" placeholder='Search for a Country...' id ="searchbar" />
+                <input className="searchBar"  value={search} onChange={handleSearch} type="text" placeholder='Search for a Country...' id ="searchbar" />
                 </label>
                 <label htmlFor="filter">
-                    <select onChange ={selectOption} value ={option} id="filter">
+                    <select onChange ={handleOption} value ={option} id="filter">
                         {filterRegion.map(({id, region})=>{
                             return <option key={id}>{region}</option>}
                         )}

@@ -1,8 +1,8 @@
 import React from  "react";
-
-function Borders({border,setName}) {
+import { Link } from "react-router-dom";
+function Borders({border}) {
     return(
-        <div className="border" onClick={e => setName(border)}>{border}</div>
+        <Link className="border" to={`/country/${border}`}>{border}</Link>
     )
 }
 

@@ -39,7 +39,7 @@ function  DetailsContainer(
             </div>
         </div>
         <div ><span>Borders: </span> <div className='borderContainer'>{borders && 
-        borders.map(border => <Borders key={border}  setName ={setName}  border ={border} ></Borders>)}   </div>
+        borders.map(border => <Borders key={border}  border ={border} />)} </div>
         </div>
         </div>
 </section>

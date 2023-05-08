@@ -1,7 +1,8 @@
-import React from 'react';
-import moon from "../moon.svg";
-import sun from "../sun.svg";
-function Navbar ({setTheme, Theme}) {
+import React,{useState} from 'react';
+import moon from "../Assets/moon.svg";
+import sun from "../Assets/sun.svg";
+function Navbar () {
+    const[Theme, setTheme] = useState('Dark');
     function changeTheme(){
         let theme = document.querySelector('html');
         if( Theme ==='Dark'){

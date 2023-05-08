@@ -1,12 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-function CountryCard({flag,name,population,region,capital, setName}) {
-    function findInfo({name}){
-        setName(name);
-    }
+function CountryCard({flag,name,population,region,capital}) {
     return(
-        <Link to="/Details"  >
-        <div className="card" onClick={(e)=>findInfo({name})}>
+        <Link to={`/country/${name}`}  >
+        <div className="card">
             <div className = "countryFlag"><img src={flag} alt ={`${name} flag`} /></div>
             <div className="info-details">
             <h3>{name}</h3>
