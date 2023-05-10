@@ -83,5 +83,5 @@ After the completion of this project i want to focus more on building  react app
 - [Stack Overflow](https://www.example.com) - I won't lie , i faced a lot of problems in this project thank goodness for stack overflow.
 ## Author
 
-- Frontend Mentor - [@Wildcatmidnight883](https://www.frontendmentor.io/profile/yourusername)
-- Linkedin - [Mkparu Somtochi ](https://www.twitter.com/yourusername)
+- Nathan Somto - [@Nathan-Somto](https://github.com/Nathan-Somto/)
+
